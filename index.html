@@ -6,11 +6,62 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1"
     />
-    <title>MarcoAI</title>
+    <title>MarcoAI 💖</title>
     <link rel="icon" href="/public/favicon.ico" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Extra custom styles */
+      body {
+        perspective: 1000px;
+      }
+
+      .card-3d {
+        transform-style: preserve-3d;
+        transition: transform 0.5s ease;
+      }
+
+      .card-3d:hover {
+        transform: rotateY(15deg) rotateX(10deg) scale(1.05);
+      }
+
+      /* Floating neon effect */
+      .float {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+
+      /* Rainbow text gradient */
+      .rainbow-text {
+        background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8f00ff);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: rainbow 5s ease infinite;
+      }
+
+      @keyframes rainbow {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+    </style>
   </head>
-  <body class="bg-[#0b0f14] text-white">
-    <div id="root"></div>
+  <body class="bg-[#0b0f14] text-white overflow-x-hidden">
+    <div id="root" class="min-h-screen flex items-center justify-center p-4">
+      <!-- Placeholder card while React loads -->
+      <div class="card-3d float bg-[#11151f] p-8 rounded-xl shadow-glow max-w-md w-full text-center">
+        <h1 class="rainbow-text text-4xl font-bold mb-4">MarcoAI 💖</h1>
+        <p class="text-neon-blue mb-6">
+          Your personal neon anime AI assistant is loading...
+        </p>
+        <div class="w-12 h-12 mx-auto border-4 border-neon-green border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    </div>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

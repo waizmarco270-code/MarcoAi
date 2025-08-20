@@ -2,10 +2,6 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./styles.css";
-
-// Optional: add Tailwind CDN fallback if styles not loaded
-import "./tailwind.css";
-
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <div className="min-h-screen bg-[#0b0f14] flex items-center justify-center p-4">
